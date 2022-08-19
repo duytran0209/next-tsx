@@ -1,7 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
-import useState from "react";
 
 const ScrollToTop = () => {
   const [backToTopButton, setBackToTopButton] = useState<boolean>(false);
@@ -33,12 +32,12 @@ const ScrollToTop = () => {
 
 const ScrollToTopStyled = styled.button`
   position: fixed;
-  bottom: 50px;
-  right: 50px;
+  bottom: 30px;
+  right: 30px;
   height: 50px;
   width: 50px;
   font-size: 50px;
-  background-color: var(--primary-color);
+  background-color: ${(props) => props.theme.primary};
   border-radius: 100rem;
   border: none;
   outline: none;

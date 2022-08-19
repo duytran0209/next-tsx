@@ -11,8 +11,8 @@ export const GlobalClasses = css`
     font: inherit;
   }
   body {
-    font-family: "Epilogue", sans-serif;
     font-size: 16px;
+    font-family: "Inter", sans-serif;
   }
   img,
   picture,
@@ -37,7 +37,7 @@ export const GlobalClasses = css`
   h6 {
     overflow-wrap: break-word;
   }
-  h2,
+  /* h2,
   h3,
   h4 {
     font-weight: bold;
@@ -55,40 +55,20 @@ export const GlobalClasses = css`
   p {
     margin-bottom: 20px;
     line-height: 2;
-  }
-
-  ul {
-    list-style-type: disc;
-  }
-  ol {
-    list-style: decimal;
-  }
-  ul,
-  ol {
-    margin-bottom: 20px;
-    padding-left: 40px;
-    margin-left: 0;
-    li {
-      margin-bottom: 10px;
-    }
-  }
-  img {
-    border-radius: 8px;
-    margin-bottom: 30px;
-  }
+  } */
 
   body::-webkit-scrollbar {
-    width: 9px;
-    background-color: #383838;
-  }
-  body::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    background-color: #6b6b6b;
+    width: 10px;
   }
 
   body::-webkit-scrollbar-track {
-    border-radius: 10px;
-    background-color: #383838;
+    background-color: #ffffff;
+  }
+
+  body::-webkit-scrollbar-thumb {
+    background-color: ${(props) => props.theme.primary};
+
+    border-radius: 100rem;
   }
 
   .container {
