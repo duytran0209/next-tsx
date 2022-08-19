@@ -1,5 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 import { GlobalClasses } from "./GlobalClasses";
-export const GlobalStyles = createGlobalStyle`
+
+const GlobalStyles: any = createGlobalStyle`
   ${GlobalClasses}
 `;
+export default GlobalStyles;
