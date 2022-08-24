@@ -2,9 +2,8 @@ import React from "react";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 import styled from "styled-components";
-
 import Image from "next/image";
-import image from "../images/logo.png";
+import image from "../";
 const NotFoundPage = () => {
   const router = useRouter();
   useEffect(() => {

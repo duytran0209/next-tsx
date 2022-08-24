@@ -1,9 +1,8 @@
 import Link from "next/link";
 import React from "react";
-import Image from "next/image";
 import styled from "styled-components";
-import image from "../../images/logo.png";
-
+import Image from "next/image";
+import img from "../../images/logo.png";
 const AuthenticationPageStyles = styled.div`
   min-height: 100vh;
   .form {
@@ -38,7 +37,7 @@ const AuthenticationPage: React.FC<AuthenProps> = ({ children }) => {
       <div>
         <div className="logo">
           <Link href="/">
-            <Image src={image} alt="monkey-blogging" />
+            <Image src={img} alt="muidatperfume" />
           </Link>
         </div>
 
