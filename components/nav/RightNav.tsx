@@ -3,16 +3,16 @@ import styled from "styled-components";
 import Link from "next/link";
 const menuLinks = [
   {
-    url: "/",
-    title: "Home",
+    url: "/about",
+    title: "Giới thiệu",
   },
   {
-    url: "/",
-    title: "About Us",
+    url: "/category",
+    title: "Thể loại",
   },
   {
-    url: "/",
-    title: "Contact Us",
+    url: "/contact",
+    title: "Liên hệ",
   },
   {
     url: "/",

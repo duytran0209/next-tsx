@@ -7,10 +7,10 @@ interface BurgerProps {
 }
 
 const BurgerStyled = styled.div<BurgerProps>`
-  width: 2rem;
-  height: 2rem;
+  width: 2.5rem;
+  height: 2.5rem;
   position: fixed;
-  top: 15px;
+  top: 25px;
   right: 20px;
   z-index: 20;
   display: none;
@@ -23,7 +23,7 @@ const BurgerStyled = styled.div<BurgerProps>`
   }
 
   div {
-    width: 2rem;
+    width: 2.5rem;
     height: 0.25rem;
     background-color: ${({ open }) => (open ? "#ccc" : "#333")};
     border-radius: 10px;
