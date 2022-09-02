@@ -1,19 +1,22 @@
 import { AppPropsWithLayout } from "../models/common";
-import { ThemeProvider } from "styled-components";
-import { theme } from "../utils/constants";
 import GlobalStyles from "../styles/GlobalStyles";
 import "../styles/global.css";
 import { EmptyLayout } from "../components/layout/Empty";
-function MyApp({ Component, pageProps }: AppPropsWithLayout) {
+import { SessionProvider } from "next-auth/react";
+
+function MyApp({
+  Component,
+  pageProps: { session, ...pageProps },
+}: AppPropsWithLayout) {
   const Layout = Component.Layout ?? EmptyLayout;
 
   return (
-    <ThemeProvider theme={theme}>
+    <SessionProvider>
       <GlobalStyles />
       <Layout>
         <Component {...pageProps} />
       </Layout>
-    </ThemeProvider>
+    </SessionProvider>
   );
 }
 export default MyApp;

@@ -6,12 +6,9 @@ import styled from "styled-components";
 import { fetcher } from "../config";
 import useDebounce from "../hooks/useDebounce";
 const CategoryPage = () => {
-  const { data, error } = useSWR(
-    `https://jsonplaceholder.typicode.com/posts`,
-    fetcher
-  );
+  const { data } = useSWR(`https://picsum.photos/v2/list`, fetcher);
   const debounce = useDebounce();
-  const posts = data || [];
+  const photos = data || [];
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [page, setPage] = useState<number>(1);
   const [postPerPage, setPostPerPage] = useState<number>(4);
@@ -19,10 +16,10 @@ const CategoryPage = () => {
     const text = e.target.value;
     debounce(() => setSearchTerm(text));
   };
-  const total = posts.length;
+  const total = photos.length;
   const indexOfLastPage = page + postPerPage;
   const indexOfFirstPage = indexOfLastPage - postPerPage;
-  const currentPosts = posts.slice(indexOfFirstPage, indexOfLastPage);
+  const currentPhotos = photos.slice(indexOfFirstPage, indexOfLastPage);
   const itemRender = (current: any, type: string, originalElement: any) => {
     if (type === "prev") {
       return <a>Previous</a>;
@@ -65,13 +62,13 @@ const CategoryPage = () => {
         </div>
 
         <div className="grid grid-cols-4 gap-10">
-          {currentPosts.length > 0 &&
-            currentPosts
-              .filter((value: { title: string }) => {
+          {currentPhotos.length > 0 &&
+            currentPhotos
+              .filter((value: { author: string }) => {
                 if (searchTerm === "") {
                   return value;
                 } else if (
-                  value.title.toLowerCase().includes(searchTerm.toLowerCase())
+                  value.author.toLowerCase().includes(searchTerm.toLowerCase())
                 ) {
                   return value;
                 }
@@ -79,7 +76,7 @@ const CategoryPage = () => {
               .map(
                 (item: {
                   id: React.Key | null | undefined;
-                  title:
+                  author:
                     | string
                     | number
                     | boolean
@@ -91,7 +88,7 @@ const CategoryPage = () => {
                     | React.ReactPortal
                     | null
                     | undefined;
-                }) => <p key={item.id}>{item.title}</p>
+                }) => <p key={item.id}>{item.author}</p>
               )}
         </div>
         <div className="mt-10">

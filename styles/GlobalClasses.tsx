@@ -13,6 +13,8 @@ export const GlobalClasses = css`
   body {
     font-size: 16px;
     font-family: "Inter", sans-serif;
+    background-color: var(--themeBackgroundColor);
+    color: var(--themeColor);
   }
   img,
   picture,
@@ -37,25 +39,6 @@ export const GlobalClasses = css`
   h6 {
     overflow-wrap: break-word;
   }
-  /* h2,
-  h3,
-  h4 {
-    font-weight: bold;
-    margin-bottom: 20px;
-  }
-  h2 {
-    font-size: 32px;
-  }
-  h3 {
-    font-size: 26px;
-  }
-  h4 {
-    font-size: 22px;
-  }
-  p {
-    margin-bottom: 20px;
-    line-height: 2;
-  } */
 
   body::-webkit-scrollbar {
     width: 10px;
@@ -66,7 +49,7 @@ export const GlobalClasses = css`
   }
 
   body::-webkit-scrollbar-thumb {
-    background-color: ${(props) => props.theme.primary};
+    background-color: var(--themeBackgroundColor);
 
     border-radius: 100rem;
   }
