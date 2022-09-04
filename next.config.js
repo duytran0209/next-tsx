@@ -3,6 +3,9 @@
  */
 const nextConfig = {
   /* config options here */
+  image: {
+    domains: ["picsum.photos"],
+  },
 };
 
 module.exports = nextConfig;

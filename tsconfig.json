@@ -19,5 +19,11 @@
     "incremental": true
   },
   "exclude": ["node_modules"],
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "assets/cartIcon.js"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "assets/cartIcon.js",
+    "pages/contact.js"
+  ]
 }

@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 
 export default function useClickOutSide(dom = "button") {
-  const [show, setShow] = useState<boolean>(false);
+  const [navToggle, setNavToggle] = useState<boolean>(false);
+
   const nodeRef = useRef<HTMLDivElement | null>(null);
   useEffect(() => {
     function handleClickOutSide(e: any) {
@@ -10,7 +11,7 @@ export default function useClickOutSide(dom = "button") {
         !nodeRef.current.contains(e.target) &&
         !e.target.matches(dom)
       ) {
-        setShow(false);
+        setNavToggle(false);
       }
     }
     document.addEventListener("click", handleClickOutSide);
@@ -19,8 +20,8 @@ export default function useClickOutSide(dom = "button") {
     };
   }, []);
   return {
-    show,
-    setShow,
+    navToggle,
+    setNavToggle,
     nodeRef,
   };
 }

@@ -3,7 +3,8 @@ import { useEffect } from "react";
 import { useRouter } from "next/router";
 import styled from "styled-components";
 import Image from "next/image";
-import image from "../images/logo_real.png";
+import image from "../public/favicon.ico";
+import { MainLayout } from "../styles/Layouts";
 const NotFoundPage = () => {
   const router = useRouter();
   useEffect(() => {
@@ -12,30 +13,30 @@ const NotFoundPage = () => {
     }, 3000);
   }, []);
   return (
-    <NotFoundPageStyled>
-      <div className="page-content">
-        <div className="image">
-          <Image src={image} alt="notfound" />
+    <MainLayout>
+      <NotFoundPageStyled>
+        <div className="page-content">
+          <div className="image">
+            <Image src={image} alt="notfound" />
+          </div>
+          <h1 className="heading">404 - Looks like lost.</h1>
+          <p className="description">
+            Maybe this page used to exist or you just spelled something wrong.
+            Chances are your spelled something wrong, so can you double check
+            the URL?
+          </p>
         </div>
-        <h1 className="heading">404 - Looks like lost.</h1>
-        <p className="description">
-          Maybe this page used to exist or you just spelled something wrong.
-          Chances are your spelled something wrong, so can you double check the
-          URL?
-        </p>
-      </div>
-    </NotFoundPageStyled>
+      </NotFoundPageStyled>
+    </MainLayout>
   );
 };
 
 const NotFoundPageStyled = styled.div`
-  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background-color: ${(props) => props.theme.black};
-  color: white;
+  color: var(--white-color);
   .page-content {
     max-width: 1000px;
     margin: 0 auto;
@@ -46,7 +47,7 @@ const NotFoundPageStyled = styled.div`
     margin-bottom: 40px;
   }
   .heading {
-    font-size: 60px;
+    font-size: 50px;
     font-weight: bold;
     margin-bottom: 20px;
   }

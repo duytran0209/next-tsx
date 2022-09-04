@@ -1,26 +1,22 @@
+import { signIn } from "next-auth/react";
 import Head from "next/head";
-// import MainLayout from "../components/layout/MainLayout";
+import styled from "styled-components";
+import PrimaryButton from "../components/PrimaryButton";
 import { NextPageWithLayout } from "../models/common";
-import { useSession, signIn } from "next-auth/react";
-import SignedInHeader from "../components/auth/SignedInHeader";
-
 const Home: NextPageWithLayout = () => {
-  const { data: session, status } = useSession();
-  const renderHeader = () => {
-    if (session) {
-      return <SignedInHeader session={session} />;
-    }
-  };
   return (
-    <>
+    <HomeStyled>
       <Head>
         <title>Home</title>
       </Head>
-      <button onClick={() => signIn()}>A</button>
-      {renderHeader()}
-    </>
+      <PrimaryButton title="Login Account" onClick={() => signIn()} />
+    </HomeStyled>
   );
 };
-
-// Home.Layout = MainLayout;
+const HomeStyled = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+`;
 export default Home;
