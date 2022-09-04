@@ -131,7 +131,7 @@ export const GlobalClasses = css`
     right: 5%;
     top: 3%;
     display: none;
-    z-index: 15;
+    z-index: 100;
     svg {
       font-size: 3rem;
     }
