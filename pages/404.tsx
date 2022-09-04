@@ -1,8 +1,7 @@
-import React from "react";
-import { useEffect } from "react";
-import { useRouter } from "next/router";
-import styled from "styled-components";
 import Image from "next/image";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
+import styled from "styled-components";
 import image from "../public/favicon.ico";
 import { MainLayout } from "../styles/Layouts";
 const NotFoundPage = () => {

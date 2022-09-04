@@ -1,6 +1,7 @@
 import { Pagination } from "antd";
 import "antd/dist/antd.css";
 import { signIn, useSession } from "next-auth/react";
+import Head from "next/head";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
@@ -9,7 +10,6 @@ import Title from "../components/Title";
 import { fetcher } from "../config";
 import useDebounce from "../hooks/useDebounce";
 import { InnerLayout, MainLayout } from "../styles/Layouts";
-import Head from "next/head";
 
 function BlogsPage() {
   const { data } = useSWR(`https://picsum.photos/v2/list`, fetcher);
@@ -17,7 +17,8 @@ function BlogsPage() {
   const photos = data || [];
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [page, setPage] = useState<number>(1);
-  const [postPerPage, setPostPerPage] = useState<number>(4);
+  const postPerPage = 4;
+  // const [postPerPage, setPostPerPage] = useState<number>(4);
   const handleFilterChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     const text = e.target.value;
     debounce(() => setSearchTerm(text));
@@ -26,7 +27,7 @@ function BlogsPage() {
   const indexOfLastPage = page + postPerPage;
   const indexOfFirstPage = indexOfLastPage - postPerPage;
   const currentPhotos = photos.slice(indexOfFirstPage, indexOfLastPage);
-  const itemRender = (current: any, type: string, originalElement: any) => {
+  const itemRender = (type: any, originalElement: any) => {
     if (type === "prev") {
       return <a>Previous</a>;
     }
