@@ -1,9 +1,8 @@
 import { Pagination } from "antd";
 import "antd/dist/antd.css";
-import { signIn, useSession } from "next-auth/react";
 import Head from "next/head";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import useSWR from "swr";
 import Title from "../components/Title";
@@ -18,7 +17,6 @@ function BlogsPage() {
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [page, setPage] = useState<number>(1);
   const postPerPage = 4;
-  // const [postPerPage, setPostPerPage] = useState<number>(4);
   const handleFilterChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     const text = e.target.value;
     debounce(() => setSearchTerm(text));
@@ -27,7 +25,7 @@ function BlogsPage() {
   const indexOfLastPage = page + postPerPage;
   const indexOfFirstPage = indexOfLastPage - postPerPage;
   const currentPhotos = photos.slice(indexOfFirstPage, indexOfLastPage);
-  const itemRender = (type: any, originalElement: any) => {
+  const itemRender = (current: any, type: any, originalElement: any) => {
     if (type === "prev") {
       return <a>Previous</a>;
     }
@@ -38,14 +36,7 @@ function BlogsPage() {
 
     return originalElement;
   };
-  const { status } = useSession();
-  useEffect(() => {
-    if (status === "unauthenticated") signIn();
-  }, [status]);
 
-  if (status !== "authenticated") {
-    return <h2>Loading...</h2>;
-  }
   return (
     <>
       <Head>

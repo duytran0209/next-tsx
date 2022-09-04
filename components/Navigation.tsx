@@ -1,19 +1,10 @@
-import { useSession } from "next-auth/react";
+import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import styled from "styled-components";
 import avatar from "../images/AvatarCV.jpeg";
-import Image from "next/image";
-import Link from "next/link";
-import SignOut from "./auth/SignOut";
 
 const Navigation: React.FC = () => {
-  const { data: session } = useSession();
-
-  const renderHeader = () => {
-    if (session) {
-      return <SignOut session={session} />;
-    }
-  };
   return (
     <NavigationStyled>
       <div className="avatar">
@@ -51,9 +42,6 @@ const Navigation: React.FC = () => {
           <Link href="/contact" className="active-class">
             Contact
           </Link>
-        </li>
-        <li className="nav-item">
-          <div className="sign-out"> {renderHeader()}</div>
         </li>
       </ul>
       <footer className="footer">
@@ -93,7 +81,7 @@ const NavigationStyled = styled.nav`
     flex-direction: column;
     align-items: center;
     width: 100%;
-    gap: 0.5rem;
+    gap: 1rem;
     padding-top: 2rem;
     .active-class {
       background-color: var(--primary-color-light);

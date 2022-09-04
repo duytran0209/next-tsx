@@ -2,7 +2,6 @@ import { AppPropsWithLayout } from "../models/common";
 import GlobalStyles from "../styles/GlobalStyles";
 import "../styles/global.css";
 import { EmptyLayout } from "../components/layout/Empty";
-import { SessionProvider } from "next-auth/react";
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -20,12 +19,12 @@ function MyApp({
     });
   }, []);
   return (
-    <SessionProvider>
+    <>
       <GlobalStyles />
       <Layout>
         <Component {...pageProps} />
       </Layout>
-    </SessionProvider>
+    </>
   );
 }
 export default MyApp;

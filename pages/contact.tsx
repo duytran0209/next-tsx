@@ -2,8 +2,7 @@ import LocationOnIcon from "@mui/icons-material/LocationOn";
 import MailIcon from "@mui/icons-material/Mail";
 import PhoneIcon from "@mui/icons-material/Phone";
 import { useFormik } from "formik";
-import { signIn, useSession } from "next-auth/react";
-import { useEffect } from "react";
+import Head from "next/head";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import styled from "styled-components";
@@ -12,7 +11,6 @@ import ContactItem from "../components/ContactItem";
 import PrimaryButton from "../components/PrimaryButton";
 import Title from "../components/Title";
 import { InnerLayout, MainLayout } from "../styles/Layouts";
-import Head from "next/head";
 
 const notify = () => {
   toast.info("Success Notification !", {
@@ -61,14 +59,7 @@ function ContactPage() {
   const phone = <PhoneIcon />;
   const mailIcon = <MailIcon />;
   const location = <LocationOnIcon />;
-  const { status } = useSession();
-  useEffect(() => {
-    if (status === "unauthenticated") signIn();
-  }, [status]);
 
-  if (status !== "authenticated") {
-    return <h2>Loading...</h2>;
-  }
   return (
     <>
       <Head>

@@ -1,19 +1,9 @@
-import { signIn, useSession } from "next-auth/react";
-import { useEffect } from "react";
+import Head from "next/head";
 import Resume from "../components/Resume";
 import Skills from "../components/Skills";
 import { MainLayout } from "../styles/Layouts";
-import Head from "next/head";
 
 function ResumePage() {
-  const { status } = useSession();
-  useEffect(() => {
-    if (status === "unauthenticated") signIn();
-  }, [status]);
-
-  if (status !== "authenticated") {
-    return <h2>Loading...</h2>;
-  }
   return (
     <>
       <Head>

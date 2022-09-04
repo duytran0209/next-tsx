@@ -1,5 +1,4 @@
-import { signIn, useSession } from "next-auth/react";
-import { useEffect } from "react";
+import Head from "next/head";
 import styled from "styled-components";
 import ImageSection from "../components/ImageSection";
 import ReviewSection from "../components/ReviewSection";
@@ -7,17 +6,8 @@ import ServicesSection from "../components/ServicesSection";
 import Title from "../components/Title";
 import { NextPageWithLayout } from "../models/common";
 import { MainLayout } from "../styles/Layouts";
-import Head from "next/head";
 
 const AboutPage: NextPageWithLayout = () => {
-  const { status } = useSession();
-  useEffect(() => {
-    if (status === "unauthenticated") signIn();
-  }, [status]);
-
-  if (status !== "authenticated") {
-    return <h2>Loading...</h2>;
-  }
   return (
     <>
       <Head>

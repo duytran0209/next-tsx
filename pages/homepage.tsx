@@ -1,25 +1,13 @@
-import React from "react";
-import styled from "styled-components";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import Head from "next/head";
+import Link from "next/link";
+import styled from "styled-components";
+import MainContent from "../components/MainContent";
 import Particle from "../components/Particle";
 import { MainLayout } from "../styles/Layouts";
-import MainContent from "../components/MainContent";
-import Link from "next/link";
-import { useSession, signIn } from "next-auth/react";
-import { useEffect } from "react";
-import Head from "next/head";
 function HomePage() {
-  const { status } = useSession();
-  useEffect(() => {
-    if (status === "unauthenticated") signIn();
-  }, [status]);
-
-  if (status !== "authenticated") {
-    return <h2>Loading...</h2>;
-  }
-
   return (
     <>
       <Head>
