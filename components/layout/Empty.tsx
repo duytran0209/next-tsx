@@ -7,7 +7,6 @@ export function EmptyLayout({ children }: LayoutProps) {
   return (
     <>
       <Sidebar />
-
       <ScrollToTop />
       <Darkmode />
       {children}
