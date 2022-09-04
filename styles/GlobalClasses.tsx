@@ -131,7 +131,8 @@ export const GlobalClasses = css`
     right: 5%;
     top: 3%;
     display: none;
-    z-index: 100;
+    opacity: 0;
+    z-index: 15;
     svg {
       font-size: 3rem;
     }
@@ -140,6 +141,7 @@ export const GlobalClasses = css`
   @media screen and (max-width: 1200px) {
     .ham-burger-menu {
       display: block;
+      opacity: 1;
     }
   }
 `;
