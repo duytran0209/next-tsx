@@ -1,4 +1,6 @@
 import { Pagination } from "antd";
+import type { PaginationProps } from "antd";
+
 import "antd/dist/antd.css";
 import Head from "next/head";
 import Link from "next/link";
@@ -25,15 +27,17 @@ function BlogsPage() {
   const indexOfLastPage = page + postPerPage;
   const indexOfFirstPage = indexOfLastPage - postPerPage;
   const currentPhotos = photos.slice(indexOfFirstPage, indexOfLastPage);
-  const itemRender = (current: any, type: any, originalElement: any) => {
+  const itemRender: PaginationProps["itemRender"] = (
+    _,
+    type,
+    originalElement
+  ) => {
     if (type === "prev") {
       return <a>Previous</a>;
     }
-
     if (type === "next") {
       return <a>Next</a>;
     }
-
     return originalElement;
   };
 
