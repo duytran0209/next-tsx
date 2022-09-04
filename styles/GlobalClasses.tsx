@@ -121,10 +121,6 @@ export const GlobalClasses = css`
       color: var(--white-color);
     }
   }
-  .nav-toggle {
-    transform: translateX(0);
-    z-index: 20;
-  }
   //Nav Toggler
   .ham-burger-menu {
     position: absolute;
@@ -143,5 +139,9 @@ export const GlobalClasses = css`
       display: block;
       opacity: 1;
     }
+  }
+  .nav-toggle {
+    transform: translateX(0) !important;
+    z-index: 100;
   }
 `;

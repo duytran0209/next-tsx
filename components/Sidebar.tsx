@@ -14,8 +14,8 @@ const Sidebar: React.FC<SidebarProps> = ({ children }) => {
     <>
       <SidebarStyled className={`${navToggle ? "nav-toggle" : ""}`}>
         <Navigation />
-        {children}
       </SidebarStyled>
+      {children}
       <div className="ham-burger-menu" ref={nodeRef}>
         <div onClick={() => setNavToggle(!navToggle)}>
           <MenuIcon />
@@ -35,7 +35,6 @@ const SidebarStyled = styled.div`
   transition: all 0.4s ease-in-out;
   @media screen and (max-width: 1200px) {
     transform: translateX(-100%);
-    z-index: 20;
   }
 `;
 

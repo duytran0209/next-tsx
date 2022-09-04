@@ -18,7 +18,7 @@ export default function useClickOutSide(dom = "button") {
     return () => {
       document.removeEventListener("click", handleClickOutSide);
     };
-  }, []);
+  }, [dom]);
   return {
     navToggle,
     setNavToggle,
