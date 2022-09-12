@@ -1,15 +1,12 @@
+import { InferGetStaticPropsType } from "next";
 import Head from "next/head";
 import Link from "next/link";
+import styled from "styled-components";
 import PrimaryButton from "../../components/PrimaryButton";
+import Title from "../../components/Title";
+import { Posts } from "../../models/posts";
 import { MainLayout } from "../../styles/Layouts";
 import { getPosts } from "../../utils/post";
-import Title from "../../components/Title";
-import styled from "styled-components";
-import { Posts } from "../../models/posts";
-
-interface Props {
-  posts: Posts[];
-}
 
 const Post = styled.div`
   margin-top: 5rem;
@@ -23,7 +20,7 @@ const Post = styled.div`
 `;
 
 export const getStaticProps = async () => {
-  const posts = await getPosts(10);
+  const posts: Posts[] = await getPosts(10);
 
   return {
     props: {
@@ -32,7 +29,7 @@ export const getStaticProps = async () => {
   };
 };
 
-const Posts: React.FC<Props> = ({ posts }) => {
+const Posts = ({ posts }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <>
       <Head>
