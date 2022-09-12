@@ -1,8 +1,8 @@
-import { Pagination } from "antd";
 import type { PaginationProps } from "antd";
-
+import { Pagination } from "antd";
 import "antd/dist/antd.css";
 import Head from "next/head";
+import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import styled from "styled-components";
@@ -10,10 +10,12 @@ import useSWR from "swr";
 import Title from "../components/Title";
 import { fetcher } from "../config";
 import useDebounce from "../hooks/useDebounce";
+import { Blogs } from "../models/blogs";
 import { InnerLayout, MainLayout } from "../styles/Layouts";
 
 function BlogsPage() {
-  const { data } = useSWR(`https://picsum.photos/v2/list`, fetcher);
+  const { data, error } = useSWR<Blogs[]>(`/api/blogs`, fetcher);
+
   const debounce = useDebounce();
   const photos = data || [];
   const [searchTerm, setSearchTerm] = useState<string>("");
@@ -40,7 +42,8 @@ function BlogsPage() {
     }
     return originalElement;
   };
-
+  if (error) return <div>Failed to load users</div>;
+  if (!data) return <div>Loading...</div>;
   return (
     <>
       <Head>
@@ -90,33 +93,35 @@ function BlogsPage() {
             <div className="blog">
               {currentPhotos.length > 0 &&
                 currentPhotos
-                  .filter((value: { author: string }) => {
+                  .filter((value) => {
                     if (searchTerm === "") {
                       return value;
                     } else if (
-                      value.author
+                      value.description
                         .toLowerCase()
                         .includes(searchTerm.toLowerCase())
                     ) {
                       return value;
                     }
                   })
-                  ?.map(
-                    (item: {
-                      id: number;
-                      author: string;
-                      download_url: string;
-                    }) => (
-                      <div key={item.id} className={"blog-item"}>
-                        <div className="image">
-                          <img src={item.download_url} alt={item.author} />
-                        </div>
-                        <div className="title">
-                          <Link href={item.download_url}>{item.author}</Link>
-                        </div>
+                  ?.map((item) => (
+                    <div key={item.id} className={"blog-item"}>
+                      <div className="image">
+                        <Image
+                          src={item.url}
+                          alt={item.description}
+                          height={250}
+                          width={450}
+                          priority
+                          quality={100}
+                          blurDataURL="blur"
+                        />
                       </div>
-                    )
-                  )}
+                      <div className="title">
+                        <Link href={item.url}>{item.description}</Link>
+                      </div>
+                    </div>
+                  ))}
             </div>
             <div className="mt-10">
               <Pagination
@@ -150,22 +155,23 @@ const BlogsStyled = styled.div`
     .image {
       overflow: hidden;
       padding-bottom: 0.5rem;
-      img {
-        width: 100%;
-        height: 300px;
+      & > span {
         object-fit: cover;
         transition: all 0.4s ease-in-out;
         &:hover {
           cursor: pointer;
-          transform: rotate(3deg) scale(1.1);
+          transform: scale(1.1);
         }
       }
     }
 
     .title {
       a {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
         font-size: 1.8rem;
-        padding: 2rem 0;
         color: var(--white-color);
         cursor: pointer;
         transition: all 0.4s ease-in-out;

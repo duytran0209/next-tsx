@@ -5,9 +5,9 @@ import styled from "styled-components";
 import { useEffect } from "react";
 
 const Darkmode = () => {
-  const [theme, setTheme] = useState("dark-theme");
+  const [theme, setTheme] = useState<string>("dark-theme");
 
-  const [checked, setChecked] = useState(false);
+  const [checked, setChecked] = useState<boolean>(false);
 
   useEffect(() => {
     document.documentElement.className = theme;

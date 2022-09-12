@@ -1,10 +1,10 @@
-import { AppPropsWithLayout } from "../models/common";
-import GlobalStyles from "../styles/GlobalStyles";
-import "../styles/global.css";
-import { EmptyLayout } from "../components/layout/Empty";
-import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { useEffect } from "react";
+import { EmptyLayout } from "../components/layout/Empty";
+import { AppPropsWithLayout } from "../models/common";
+import "../styles/global.css";
+import GlobalStyles from "../styles/GlobalStyles";
 
 function MyApp({
   Component,

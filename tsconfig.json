@@ -24,6 +24,8 @@
     "**/*.ts",
     "**/*.tsx",
     "assets/cartIcon.js",
-    "pages/contact.js"
+    "pages/contact.js",
+    "pages/photos/index.js",
+    "hooks/posts.js"
   ]
 }

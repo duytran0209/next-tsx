@@ -1,12 +1,15 @@
 import Head from "next/head";
 import Link from "next/link";
+import styled from "styled-components";
 import PrimaryButton from "../../components/PrimaryButton";
 import { MainLayout } from "../../styles/Layouts";
-import { getPostIds, getPostById } from "../../utils/post";
-import styled from "styled-components";
+import { getPostById, getPostIds } from "../../utils/post";
 
 interface PostProps {
-  post: any;
+  post: {
+    title: string;
+    body: string;
+  };
 }
 const Post: React.FC<PostProps> = ({ post }) => {
   return (

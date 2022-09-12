@@ -5,12 +5,13 @@ import { MainLayout } from "../../styles/Layouts";
 import { getPosts } from "../../utils/post";
 import Title from "../../components/Title";
 import styled from "styled-components";
+import { Posts } from "../../models/posts";
 
 interface Props {
-  posts: any;
+  posts: Posts[];
 }
 
-const Blog = styled.div`
+const Post = styled.div`
   margin-top: 5rem;
   .post-item {
     margin-bottom: 2.5rem;
@@ -20,6 +21,17 @@ const Blog = styled.div`
     line-height: 2;
   }
 `;
+
+export const getStaticProps = async () => {
+  const posts = await getPosts(10);
+
+  return {
+    props: {
+      posts,
+    },
+  };
+};
+
 const Posts: React.FC<Props> = ({ posts }) => {
   return (
     <>
@@ -40,32 +52,23 @@ const Posts: React.FC<Props> = ({ posts }) => {
       </Head>
       <MainLayout>
         <Title title={"Posts"} span={"posts"} />
-        <Blog>
-          {posts?.map((post: any) => (
-            <div key={post.id} className="post-item">
-              <p className="post-title">
-                {post.id} -- {post.title}
-              </p>
-              <p className="post-desc">{post.body}</p>
-              <Link href={`/posts/${post.id}`}>
-                <PrimaryButton title="See More" />
-              </Link>
-            </div>
-          ))}
-        </Blog>
+        <Post>
+          {posts.length > 0 &&
+            posts?.map((post) => (
+              <div key={post.id} className="post-item">
+                <p className="post-title">
+                  {post.id} -- {post.title}
+                </p>
+                <p className="post-desc">{post.body}</p>
+                <Link href={`/posts/${post.id}`}>
+                  <PrimaryButton title="See More" />
+                </Link>
+              </div>
+            ))}
+        </Post>
       </MainLayout>
     </>
   );
-};
-
-export const getStaticProps = async () => {
-  const posts = await getPosts(10);
-
-  return {
-    props: {
-      posts,
-    },
-  };
 };
 
 export default Posts;

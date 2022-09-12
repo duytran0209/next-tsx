@@ -9,7 +9,15 @@ const Navigation: React.FC = () => {
     <NavigationStyled>
       <div className="avatar">
         <div className="image-avatar">
-          <Image src={avatar} alt="avatar" width={220} height={220} />
+          <Image
+            src={avatar}
+            alt="avatar"
+            width={220}
+            height={220}
+            priority
+            quality={100}
+            placeholder="blur"
+          />
         </div>
       </div>
       <ul className="nav-items">
@@ -28,6 +36,7 @@ const Navigation: React.FC = () => {
             Resume
           </Link>
         </li>
+
         <li className="nav-item">
           <Link href="/posts" className="active-class">
             Posts

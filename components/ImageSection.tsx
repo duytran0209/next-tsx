@@ -13,7 +13,14 @@ function ImageSection() {
         data-aos-easing="ease-out-cubic"
         data-aos-duration="2000"
       >
-        <Image src={resume} alt="avatar" height={625} width={600} />
+        <Image
+          src={resume}
+          alt="avatar"
+          height={625}
+          width={600}
+          priority
+          placeholder="blur"
+        />
       </div>
 
       <div

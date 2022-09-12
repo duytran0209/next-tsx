@@ -1,10 +1,12 @@
-/**
- * @type {import('next').NextConfig}
- */
+/** @type {import('next').NextConfig} */
+
 const nextConfig = {
-  /* config options here */
-  image: {
-    domains: ["picsum.photos"],
+  reactStrictMode: true,
+  compiler: {
+    styledComponents: true,
+  },
+  images: {
+    domains: ["www.costa.co.uk"],
   },
 };
 
