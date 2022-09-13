@@ -42,7 +42,7 @@ function Resume() {
           />
 
           <ResumeItem
-            year={"2-2022"}
+            year={"2021"}
             title={"React JS Developer Course"}
             subTitle={"ZendVN Training Center for Programmers"}
             text={
@@ -62,7 +62,7 @@ function Resume() {
             data-aos-duration="2000"
           >
             <ResumeItem
-              year={"6-2022"}
+              year={"3-2022"}
               title={"Success Software Services"}
               subTitle={"Intern Front-end Developer"}
               text={
