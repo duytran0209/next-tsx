@@ -35,8 +35,7 @@ const ResumeItemStyled = styled.div`
     padding-bottom: 3rem;
   }
   .left-content {
-    width: 50%;
-    padding-left: 20px;
+    padding-left: 30px;
     position: relative;
     &::before {
       content: "";
@@ -51,6 +50,7 @@ const ResumeItemStyled = styled.div`
     }
     p {
       display: inline-block;
+      margin-right: 3rem;
     }
   }
   .right-content {

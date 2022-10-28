@@ -1,10 +1,10 @@
-import styled from "styled-components";
-import { InnerLayout } from "../styles/Layouts";
-import SmallTitle from "./SmallTitle";
-import Title from "./Title";
 import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
 import SchoolIcon from "@mui/icons-material/School";
+import styled from "styled-components";
+import { InnerLayout } from "../styles/Layouts";
 import ResumeItem from "./ResumeItem";
+import SmallTitle from "./SmallTitle";
+import Title from "./Title";
 
 function Resume() {
   const briefcase = <BusinessCenterIcon />;
@@ -24,20 +24,20 @@ function Resume() {
           data-aos-duration="2000"
         >
           <ResumeItem
-            year={"2019-"}
+            year={"2019"}
             title={"E-commerce"}
-            subTitle={"University of Economics and Law"}
+            subTitle={"Vietnam National University"}
             text={
-              "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa nihil impedit natus nostrum? Velit accusantium id quos, nihil vel quod.Quas, magni mollitia, aspernatur consequatur accusamus vero eum facere exercitationem velit suscipit ipsam placeat libero."
+              "Final year student majoring in e-commerce, Vietnam National University."
             }
           />
 
           <ResumeItem
-            year={"9-2021"}
+            year={"2021"}
             title={"HTML5, CSS3 web programming course jQuery, Bootstrap"}
             subTitle={"University of Sciences Informatics Center"}
             text={
-              "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa nihil impedit natus nostrum? Velit accusantium id quos, nihil vel quod.Quas, magni mollitia, aspernatur consequatur accusamus vero eum facere exercitationem velit suscipit ipsam placeat libero."
+              "Learning the knowledge of Javascript ES6, Bootstrap, Responsive Web Design (RWD)."
             }
           />
 
@@ -46,7 +46,7 @@ function Resume() {
             title={"React JS Developer Course"}
             subTitle={"ZendVN Training Center for Programmers"}
             text={
-              "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa nihil impedit natus nostrum? Velit accusantium id quos, nihil vel quod.Quas, magni mollitia, aspernatur consequatur accusamus vero eum facere exercitationem velit suscipit ipsam placeat libero."
+              "Learning the knowledge of React JS (react hooks and custom hooks), Redux Toolkit (thunk and saga), CRUD app."
             }
           />
         </div>
@@ -62,30 +62,49 @@ function Resume() {
             data-aos-duration="2000"
           >
             <ResumeItem
-              year={"3-2022"}
+              year={"05/2022 - 09/2022"}
               title={"Success Software Services"}
               subTitle={"Intern Front-end Developer"}
               text={
-                " Learn about the working process to complete the product and learning more languages Javascript ES6 and Typescript, ReactJS/Next JS, Redux Tookit, Redux Saga, Redux Thunk, Github and Jira, Firebase, UI/UX, SEO, Call rest API using Postman...."
+                " Participate and learning in projects using technologies such as ReactJs and NextJs, Typescript and Javascript ES6 , Github conventions and Jira. Learn about the working process to complete the product."
               }
             />
 
             <ResumeItem
-              year={"2022"}
-              title={"The movies search app"}
-              subTitle={"ZendVN Center Directions"}
-              text={` Languages employed:  CSS (tailwind), Javascript, ReactJS and SWR. Languages employed:  CSS (tailwind), Javascript, ReactJS and SWR. As a result, make a simple movie watching website. Demo: https://moviesearchapp0209.netlify.app/. Github: https://github.com/duytran0209/movieapp`}
-            />
-
-            <ResumeItem
-              year={"2022"}
-              title={"Admin Jobs"}
-              subTitle={"Self-improvement"}
-              text={
-                " Languages employed: Styled component, Redux toolkit (redux thunk), Typescript and Javascript ES6. Languages employed: Styled component, Redux toolkit (redux thunk), Typescript and Javascript ES6. Demo: https://jobadmin0209.vercel.app. Github: https://github.com/duytran0209/dashboardmanagement"
-              }
+              year={"09/2022"}
+              title={"Bakco Solutions"}
+              subTitle={"Fresher and Freelancer Front-end Developer"}
+              text={`Participate in projects using technologies such as ReactJs, Redux Saga, Typescript, Material UI. Learn about the working process to complete the product.`}
             />
           </div>
+        </div>
+        <div className="small-title ">
+          <SmallTitle icon={briefcase} title={"Projects"} />
+        </div>
+
+        <div
+          className="resume-content"
+          data-aos="zoom-out-left"
+          data-aos-easing="ease-out-cubic"
+          data-aos-duration="2000"
+        >
+          <ResumeItem
+            year={"07/2022 - 09/2022"}
+            title={"ACB bank"}
+            subTitle={"Delivery ACB"}
+            text={
+              "This project is a website where visitors can get details, latest news and payment pages of ACB bank. 8 front-end developers and my responsibilities Trained in the process of participating in the project. Technologies used: ReactJS, Redux Saga, Typescript, Material UI, Adobe XD."
+            }
+          />
+
+          <ResumeItem
+            year={"09/2022 - 11/2022"}
+            title={"Ho Chi Minh City Department of Health"}
+            subTitle={"Datahub"}
+            text={
+              "Manage HIV patients information, included: patient list, place of medical treatment, past medical history. Team size: 3 front-end developers, 2 back-end, 1 tester and 1 devops. Technologies used: ReactJS, Redux Saga, Typescript, Material UI, Figma."
+            }
+          />
         </div>
       </InnerLayout>
     </ResumeStyled>

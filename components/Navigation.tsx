@@ -22,7 +22,7 @@ const Navigation: React.FC = () => {
       </div>
       <ul className="nav-items">
         <li className="nav-item">
-          <Link href="/homepage" className="active-class">
+          <Link href="/" className="active-class">
             Home
           </Link>
         </li>
@@ -37,16 +37,6 @@ const Navigation: React.FC = () => {
           </Link>
         </li>
 
-        <li className="nav-item">
-          <Link href="/posts" className="active-class">
-            Posts
-          </Link>
-        </li>
-        <li className="nav-item">
-          <Link href="/blogs" className="active-class">
-            Blogs
-          </Link>
-        </li>
         <li className="nav-item">
           <Link href="/contact" className="active-class">
             Contact
@@ -90,8 +80,7 @@ const NavigationStyled = styled.nav`
     flex-direction: column;
     align-items: center;
     width: 100%;
-    gap: 1rem;
-    padding-top: 2rem;
+    gap: 2rem;
     .active-class {
       background-color: var(--primary-color-light);
       color: white;
