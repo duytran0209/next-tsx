@@ -34,8 +34,9 @@ function ImageSection() {
         </h4>
 
         <div className="paragraph">
-          If you&apos;re already a front-end developer, well, pretend
-          you&apos;re also wearing a pirate hat.
+          I enjoy solving front-end problems and creating the best user
+          experience for users. I also learn new technologies and best practices
+          to become a better engineer with my knowledge of UI/UX design.
         </div>
 
         <div className="about-info">

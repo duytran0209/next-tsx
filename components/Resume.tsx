@@ -105,6 +105,15 @@ function Resume() {
               "Manage HIV patients information, included: patient list, place of medical treatment, past medical history. Team size: 3 front-end developers, 2 back-end, 1 tester and 1 devops. Technologies used: ReactJS, Redux Saga, Typescript, Material UI, Figma."
             }
           />
+
+          <ResumeItem
+            year={"11/2022 "}
+            title={"Management system handling of violations Ha Tien city"}
+            subTitle={"Ha Tien"}
+            text={
+              "Monitoring, receiving and handling traffic violations in Ha Tien city. Team size: 6 members. Technologies used: ReactJS, Redux Saga, Typescript, Material UI, Figma."
+            }
+          />
         </div>
       </InnerLayout>
     </ResumeStyled>

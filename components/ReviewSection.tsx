@@ -11,18 +11,18 @@ const ReviewSection = () => {
       data-aos-easing="ease-out-cubic"
       data-aos-duration="2000"
     >
-      <Title title={"Reviews"} span={"Reviews"} />
+      <Title title={"ACTIVITIES"} span={"ACTIVITIES"} />
       <InnerLayout>
         <div className="reviews">
           <ReviewItem
             text={
-              "Novices can learn from experienced developers through code reviews  "
+              "Participating in a research project at the Economics Falcuty  "
             }
           />
 
           <ReviewItem
             text={
-              "Allow to keep sharing and updating the knowledge within the team"
+              "Math, physics and chemistry tutoring for 12th grade students at Tien Phong and Ong Mat Troi tutoring center."
             }
           />
         </div>

@@ -15,21 +15,19 @@ const ServicesSection = () => {
         data-aos-easing="ease-out-cubic"
         data-aos-duration="2000"
       >
-        <Title title={"Services"} span={"services"}></Title>
+        <Title title={"Technical skills"} span={"Technical skills"}></Title>
         <div className="services">
           <ServiceCard
             image={design}
-            title={"HTML3, CSS5"}
-            paragraph={
-              "Bootstrap 5, SCSS, Tailwind CSS, CSS module, Styled Components ...  "
-            }
+            title={"Programming Languages:"}
+            paragraph={"JavaScript, TypeScript"}
           ></ServiceCard>
 
           <ServiceCard
             image={intelligence}
-            title={"React JS"}
+            title={"Frameworks/Platforms:"}
             paragraph={
-              "Javascript ES6, Typescript, React Hook, Redux Toolkit, Redux Saga , NextJS ... "
+              "NextJS, ReactJS,Redux, Redux Toolkit,Bootstrap, Material UI, SCSS, jQuery "
             }
           ></ServiceCard>
 

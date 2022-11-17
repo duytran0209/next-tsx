@@ -13,7 +13,7 @@ import Title from "../components/Title";
 import { InnerLayout, MainLayout } from "../styles/Layouts";
 
 const notify = () => {
-  toast.info("Success Notification !", {
+  toast.info("Thank you! I will contact you soon", {
     position: toast.POSITION.TOP_CENTER,
   });
 };
@@ -55,6 +55,9 @@ function ContactPage() {
     onSubmit: () => {
       notify();
     },
+    onReset() {
+      notify();
+    },
   });
   const phone = <PhoneIcon />;
   const mailIcon = <MailIcon />;
@@ -86,7 +89,7 @@ function ContactPage() {
                 <h4>Get In Touch</h4>
               </div>
 
-              <form className="form" onSubmit={formik.handleSubmit}>
+              <form className="form" onSubmit={formik.handleReset}>
                 <div className="form-field">
                   <label htmlFor="name">Enter your name*</label>
                   <input
@@ -161,17 +164,17 @@ function ContactPage() {
                 title={"Phone"}
                 icon={phone}
                 cont1={"+84-796132710"}
-                cont2={"+84-976361970"}
+                cont2={""}
               />
               <ContactItem
                 title={"Email"}
                 icon={mailIcon}
-                cont2={"District Thu Duc, Ho Chi Minh city"}
+                cont2={"tranduy10a@gmail.com"}
               />
               <ContactItem
                 title={"Address"}
                 icon={location}
-                cont2={"District Thu Duc, Ho Chi Minh city"}
+                cont2={"District Cau Giay, Ha Noi Capital"}
               />
             </div>
           </InnerLayout>

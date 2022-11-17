@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 interface Props {
   title: string;
-  onClick?: () => {};
+  onClick?: any;
   type?: "submit" | "button" | "reset" | undefined;
 }
 const PrimaryButton: React.FC<Props> = ({
@@ -12,9 +12,17 @@ const PrimaryButton: React.FC<Props> = ({
   type = "submit",
 }) => {
   return (
-    <PrimaryButtonStyled type={type} onClick={onClick}>
-      {title}
-    </PrimaryButtonStyled>
+    <a
+      target="_blank"
+      href="https://drive.google.com/file/d/1HnzWQ6E1F2FIAzegwr4unuC3DB01pU3p/view
+
+"
+      rel="noopener noreferrer"
+    >
+      <PrimaryButtonStyled type={type} onClick={onClick}>
+        {title}
+      </PrimaryButtonStyled>
+    </a>
   );
 };
 
